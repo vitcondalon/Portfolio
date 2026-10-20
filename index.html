@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lê Trí Việt — Cybersecurity & Pentest Portfolio</title>
+
+  <!-- Favicon: SVG Cybersecurity Shield sắc nét mọi độ phân giải -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%230b1329' d='M16 2 L28 7 V16 C28 23.5 22.8 28.5 16 30 C9.2 28.5 4 23.5 4 16 V7 Z'/%3E%3Cpath fill='none' stroke='%2360a5fa' stroke-width='2' stroke-linejoin='round' d='M16 3 L27 7.5 V16 C27 22.8 22.2 27.2 16 28.6 C9.8 27.2 5 22.8 5 16 V7.5 Z'/%3E%3Cpath fill='none' stroke='%2338bdf8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M11 14 L14 17 L11 20 M16 20 H21'/%3E%3C/svg%3E" />
+
+  <!-- Open Graph (preview khi share link trên mạng xã hội) -->
+  <meta property="og:title" content="Lê Trí Việt — Cybersecurity & Pentest Portfolio" />
+  <meta property="og:description" content="Fourth-year IT student focused on Offensive Security, Pentesting & Network Security (CCNA). Division B Finalist at CSCV2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lê Trí Việt — Cybersecurity & Pentest Portfolio" />
+  <meta name="twitter:description" content="Fourth-year IT student focused on Offensive Security, Pentesting & Network Security (CCNA). Division B Finalist at CSCV2026." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Canvas nằm phía sau toàn bộ nội dung -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Canvas con nhện Halloween (Inverse Kinematics bò quanh mạng nhện) -->
+  <canvas id="halloween-spider" aria-hidden="true"></canvas>
+
+  <!-- Halloween Decor Layer (Chỉ xuất hiện khi bật Halloween mode) -->
+  <div id="halloween-decor-layer" class="halloween-decor" aria-hidden="true">
+    <!-- Vầng trăng rằm Halloween tỏa sáng sau trang -->
+    <div id="halloween-moon"></div>
+
+    <!-- Phù thủy cưỡi chổi lướt qua bầu trời đêm -->
+    <div id="halloween-witch">
+      <img src="assets/images/witch.svg" alt="" width="56" height="52" />
+    </div>
+
+    <!-- Đàn dơi bay lượn trên cao -->
+    <div id="halloween-bats">
+      <span class="sky-bat bat-1"><img src="assets/images/bat.svg" alt="" /></span>
+      <span class="sky-bat bat-2"><img src="assets/images/bat.svg" alt="" /></span>
+    </div>
+
+    <!-- Mạng nhện góc tinh tế (Spider Web) -->
+    <div id="halloween-spider-web">
+      <svg class="corner-web-svg" viewBox="0 0 260 260" fill="none">
+        <!-- Các nan tơ nhện chính từ góc (0,0) -->
+        <line x1="0" y1="0" x2="260" y2="0" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+        <line x1="0" y1="0" x2="252" y2="65" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+        <line x1="0" y1="0" x2="230" y2="125" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+        <line x1="0" y1="0" x2="185" y2="185" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <line x1="0" y1="0" x2="125" y2="230" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+        <line x1="0" y1="0" x2="65" y2="252" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+        <line x1="0" y1="0" x2="0" y2="260" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+
+        <!-- Các vòng tơ cung tròn đồng tâm nối các nan tơ với độ chùng tự nhiên -->
+        <path d="M45,0 Q40,10 39,12 Q35,21 32,32 Q21,35 12,39 Q10,40 0,45" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+        <path d="M85,0 Q77,20 74,22 Q67,39 60,60 Q39,67 22,74 Q20,77 0,85" stroke="currentColor" stroke-width="0.8" opacity="0.45"/>
+        <path d="M130,0 Q118,31 113,34 Q102,60 92,92 Q60,102 34,113 Q31,118 0,130" stroke="currentColor" stroke-width="0.85" opacity="0.45"/>
+        <path d="M175,0 Q159,42 153,46 Q138,81 124,124 Q81,138 46,153 Q42,159 0,175" stroke="currentColor" stroke-width="0.9" opacity="0.5"/>
+        <path d="M220,0 Q200,53 192,58 Q174,102 156,156 Q102,174 58,192 Q53,200 0,220" stroke="currentColor" stroke-width="0.95" opacity="0.55"/>
+        <path d="M260,0 Q236,63 227,69 Q206,121 184,184 Q121,206 69,227 Q63,236 0,260" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <!-- Lớp sương mù ma mị lững lờ dưới đáy (Halloween Ground Mist) -->
+    <div id="halloween-mist" aria-hidden="true">
+      <div class="mist-layer mist-1"></div>
+      <div class="mist-layer mist-2"></div>
+    </div>
+  </div>
+
+  <!-- Layout chính: 2 cột -->
+  <div id="layout">
+
+    <!-- CỘT TRÁI: cố định -->
+    <aside id="sidebar">
+      <div id="sidebar-top">
+        <h1 id="site-name"></h1>
+        <p id="site-title"></p>
+        <p id="site-tagline"></p><!-- điền từ content.js -->
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="#about"       class="nav-link" data-section="about"></a></li>
+            <li><a href="#achievements" class="nav-link" data-section="achievements"></a></li>
+            <li><a href="#projects"    class="nav-link" data-section="projects"></a></li>
+            <li><a href="#notes"       class="nav-link" data-section="notes"></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="sidebar-bottom">
+        <!-- Nút đổi mode: Night Snow / Event -->
+        <button id="mode-toggle" aria-label="Toggle event mode">
+          <span id="mode-label">🌙 Night Snow</span>
+        </button>
+
+        <!-- Nút đổi ngôn ngữ -->
+        <button id="lang-toggle" aria-label="Toggle language">EN / VI</button>
+
+        <!-- Nút xem / tải CV -->
+        <a id="cv-btn" class="cv-download-btn" href="assets/LeTriViet_CV.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="cv-icon">📄</span> <span id="cv-label">Download CV</span>
+        </a>
+
+        <!-- Icon liên hệ -->
+        <div id="contact-icons">
+          <!-- SVG và link điền từ content.js -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- CỘT PHẢI: cuộn -->
+    <main id="content">
+      <section id="about"        class="section"></section>
+      <section id="achievements" class="section"></section>
+      <section id="projects"     class="section"></section>
+      <section id="notes"        class="section"></section>
+    </main>
+
+  </div><!-- /#layout -->
+
+  <!-- Thứ tự load: content trước, main sau, effects & spider sau cùng -->
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+  <script src="effects.js"></script>
+  <script src="spider.js"></script>
+</body>
+</html>
