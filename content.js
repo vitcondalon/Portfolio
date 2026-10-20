@@ -52,11 +52,11 @@ const CONTENT = {
   about: {
     en: [
       "I'm a fourth-year IT student at Dong Nai Technology University majoring in computer networking. Grounded in a solid CCNA foundation, I'm currently diving into offensive security and penetration testing — practicing core toolchains on Kali Linux and learning to think like an attacker through CTF challenges.",
-      "My daily focus is building hands-on offensive capabilities: network enumeration, vulnerability discovery, and exploit fundamentals while understanding what happens under the hood. I competed as a Division B finalist (Rank 29/44) in CSCV2026 (National Cybersecurity Student Competition) and am actively advancing through TryHackMe attack paths."
+      "My daily focus is building hands-on offensive capabilities: network enumeration, vulnerability discovery, and exploit fundamentals while understanding what happens under the hood. I competed in the Jeopardy Finals of the Cybersecurity Student Contest Vietnam 2026 (CSCV 2026) with team DNTU_SCURITY (ranked 29th out of 47 teams), and am actively advancing through TryHackMe attack paths."
     ],
     vi: [
       "Mình là sinh viên năm cuối ngành CNTT (chuyên ngành Mạng máy tính) tại Đại học Công nghệ Đồng Nai. Xuất phát từ nền tảng mạng CCNA vững chắc, mình hiện đang đào sâu vào an toàn thông tin theo hướng tấn công (Offensive Security / Pentest) — rèn luyện bộ công cụ thực chiến trên Kali Linux và rèn tư duy của kẻ tấn công qua các giải CTF.",
-      "Trọng tâm hiện tại của mình là năng lực thực chiến: trinh sát mạng (recon), rà soát lỗ hổng và nắm rõ bản chất kỹ thuật của từng bước khai thác thay vì chỉ phụ thuộc vào công cụ tự động. Mình đã lọt vào vòng chung khảo Bảng B tại CSCV2026 (đạt hạng 29/44) và đang tiếp tục nâng cao kỹ năng qua các attack path trên TryHackMe."
+      "Trọng tâm hiện tại của mình là năng lực thực chiến: trinh sát mạng (recon), rà soát lỗ hổng và nắm rõ bản chất kỹ thuật của từng bước khai thác thay vì chỉ phụ thuộc vào công cụ tự động. Mình cùng đội thi DNTU_SCURITY đã lọt vào vòng chung khảo Jeopardy tại cuộc thi Sinh viên với An toàn thông tin 2026 (CSCV 2026), xếp hạng 29/47 đội và đang tiếp tục nâng cao kỹ năng qua các attack path trên TryHackMe."
     ]
   },
 
@@ -64,10 +64,16 @@ const CONTENT = {
   achievements: {
     competitions: [
       {
-        name: { en: "CSCV2026 — National Cybersecurity Student Competition", vi: "CSCV2026 — Olympic An ninh mạng Sinh viên" },
-        detail: { en: "Finalist (Rank 29/44), Division B", vi: "Chung khảo (Hạng 29/44), Bảng B" },
+        name: {
+          en: "Cybersecurity Student Contest Vietnam 2026 (CSCV) — Jeopardy Finals",
+          vi: "Sinh viên với An toàn thông tin 2026 (CSCV) — Chung khảo Jeopardy"
+        },
+        detail: {
+          en: "Finalist (Rank 29th/47) · Team DNTU_SCURITY",
+          vi: "Chung khảo (Hạng 29/47) · Đội DNTU_SCURITY"
+        },
         year: "2026",
-        link: null
+        link: "https://jeo.cscv.vn"
       },
       {
         name: { en: "Cisco NetAcad Riders 2025", vi: "Cisco NetAcad Riders 2025" },
